@@ -1,4 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;600;700&display=swap");
+
+/* Hide translatable content until i18n is ready to prevent English flicker */
+html:not(.i18n-ready) [data-i18n] {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Ensure hero section maintains layout during loading */
+html:not(.i18n-ready) .hero {
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 html {
   overflow-wrap: break-word;
   word-break: normal;
